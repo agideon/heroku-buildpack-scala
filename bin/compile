@@ -52,6 +52,16 @@ export PATH=$PATH:$CACHE_DIR/.gems/bin
 export GEM_PATH=$GEM_PATH:$CACHE_DIR/.gems
 status_done
 
+cat <<EOF
+After SASS Install, path: $PATH
+...GEM_PATH: $GEM_PATH
+EOF
+ls -ltra $CACHE_DIR/.gems/bin
+whereis sass
+
+echo "Done with SASSing"
+
+
 
 
 # install JDK
