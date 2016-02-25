@@ -65,8 +65,8 @@ whereis sass
 which sass
 whereis ruby_executable_hooks
 which ruby_executable_hooks
-whereis ruby
-which ruby
+#whereis ruby
+#which ruby
 
 /app/vendor/ruby-2.2.4/bin/ruby -v
 sass --version
