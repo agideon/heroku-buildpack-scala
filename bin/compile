@@ -57,8 +57,19 @@ After SASS Install, path: $PATH
 ...GEM_PATH: $GEM_PATH
 EOF
 ls -ltra $CACHE_DIR/.gems/bin
-whereis sass
 
+whereis sass
+which sass
+whereis ruby_executable_hooks
+which ruby_executable_hooks
+whereis ruby
+which ruby
+
+echo "...head:"
+head -10 $CACHE_DIR/.gems/bin/sass
+
+
+ruby -v
 sass --version
 
 
