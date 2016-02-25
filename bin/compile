@@ -59,6 +59,9 @@ EOF
 ls -ltra $CACHE_DIR/.gems/bin
 whereis sass
 
+sass --version
+
+
 echo "Done with SASSing"
 
 
@@ -161,9 +164,11 @@ if [ ! -d "$SBT_USER_HOME/.ivy2" ]; then
 fi
 
 # build app
+echo "Beginning build using run_sbt"
 run_sbt "$javaVersion" "$SBT_USER_HOME_ABSOLUTE" "$SBT_BINDIR/$SBT_JAR" "$SBT_TASKS"
 
 # repack cache
+echo "Repack cache"
 mkdir -p $CACHE_DIR
 for DIR in $CACHED_DIRS; do
   cache_copy $DIR $BUILD_DIR $CACHE_DIR
