@@ -61,10 +61,10 @@ ls -ltra $CACHE_DIR/.gems/bin
 echo "...head:"
 head -10 $CACHE_DIR/.gems/bin/sass
 
-whereis sass
-which sass
-whereis ruby_executable_hooks
-which ruby_executable_hooks
+#whereis sass
+#which sass
+#whereis ruby_executable_hooks
+#which ruby_executable_hooks
 #whereis ruby
 #which ruby
 
