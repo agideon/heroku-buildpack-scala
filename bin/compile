@@ -62,15 +62,11 @@ echo "...head:"
 head -10 $CACHE_DIR/.gems/bin/sass
 
 whereis gem
-
-#whereis sass
-#which sass
-#whereis ruby_executable_hooks
-#which ruby_executable_hooks
-#whereis ruby
-#which ruby
+whereis ruby
+ls -l /usr/bin/gem /usr/bin/ruby
 
 ruby -v
+gem -v
 sass --version
 
 
