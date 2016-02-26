@@ -46,6 +46,16 @@ mkdir -p $CACHE_DIR
 
 # SASS/compass support
 status_pending "Installing SASS"
+
+
+# This is inefficient, but I am adding it because Heroku recently upgraded the ruby
+# version and previously cached files became invalid but in such a way that "gem
+# install" didn't identify the issue and re-install.  If someone has a better approach...
+if [ -d $CACHE_DIR/.gems ]
+    then
+    rm -rf $CACHE_DIR/.gems
+    fi
+
 mkdir -p $CACHE_DIR/.gems
 gem install -i $CACHE_DIR/.gems --no-rdoc compass
 export PATH=$PATH:$CACHE_DIR/.gems/bin
