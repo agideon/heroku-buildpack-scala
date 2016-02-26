@@ -64,6 +64,7 @@ head -10 $CACHE_DIR/.gems/bin/sass
 whereis gem
 whereis ruby
 ls -l /usr/bin/gem /usr/bin/ruby
+ls -lc /usr/bin/gem /usr/bin/ruby
 
 ruby -v
 gem -v
