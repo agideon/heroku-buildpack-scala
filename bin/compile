@@ -42,10 +42,17 @@ curl --retry 3 --silent --location $JVM_COMMON_BUILDPACK | tar xzm -C /tmp/jvm-c
 mkdir -p $CACHE_DIR
 
 
-
+echo "Content of ${CACHE_DIR}:"
+ls -ltra ${CACHE_DIR}
+if [ -d $CACHE_DIR/.gems ]
+    then
+    echo "Content of ${CACHE_DIR}/.gems:"
+    ls -ltra ${CACHE_DIR}/.gems
+    fi
 
 # SASS/compass support
 status_pending "Installing SASS"
+rm -rf $CACHE_DIR/.gems
 mkdir -p $CACHE_DIR/.gems
 gem install -i $CACHE_DIR/.gems --no-rdoc compass
 export PATH=$PATH:$CACHE_DIR/.gems/bin
@@ -61,8 +68,19 @@ ls -ltra $CACHE_DIR/.gems/bin
 echo "...head:"
 head -10 $CACHE_DIR/.gems/bin/sass
 
+echo "whereis gem:"
 whereis gem
+
+echo "which gem:"
+which gem
+
+echo "whereis ruby:"
 whereis ruby
+
+echo "which ruby:"
+which ruby
+
+
 ls -l /usr/bin/gem /usr/bin/ruby
 ls -lc /usr/bin/gem /usr/bin/ruby
 
