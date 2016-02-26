@@ -53,6 +53,7 @@ status_pending "Installing SASS"
 # install" didn't identify the issue and re-install.  If someone has a better approach...
 if [ -d $CACHE_DIR/.gems ]
     then
+    echo -n "...removing previous gems..."
     rm -rf $CACHE_DIR/.gems
     fi
 
