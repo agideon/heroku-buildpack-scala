@@ -58,7 +58,10 @@ status_pending "Installing SASS from https://sass-lang.com/install"
 mkdir -p $CACHE_DIR/.dart-sass
 wget -O $CACHE_DIR/.dart-sass/dart-sass-x64.tar.gz https://github.com/sass/dart-sass/releases/download/1.15.2/dart-sass-1.15.2-linux-x64.tar.gz
 zcat $CACHE_DIR/.dart-sass/dart-sass-x64.tar.gz | tar -C $CACHE_DIR/.dart-sass -xf -
-export PATH=$PATH:$CACHE_DIR/.dart-sass
+export PATH=$PATH:$CACHE_DIR/.dart-sass/dart-sass
+echo "Content of sass directory:"
+ls -ltra $CACHE_DIR/.dart-sass
+ls -ltra $CACHE_DIR/.dart-sass/dart-sass
 
 status_done
 
