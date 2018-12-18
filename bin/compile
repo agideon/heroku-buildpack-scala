@@ -46,7 +46,7 @@ mkdir -p $CACHE_DIR
 echo "Ruby information..."
 whereis gem
 whereis ruby
-ls -lc usr/bin/gem /usr/bin/ruby
+ls -lc /usr/bin/gem /usr/bin/ruby
 ruby -v
 gem -v
 echo ""
