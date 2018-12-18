@@ -43,7 +43,7 @@ mkdir -p $CACHE_DIR
 
 
 # Debugging Ruby version
-echo "Ruby information..."
+echo "Checking Ruby information..."
 whereis gem
 whereis ruby
 ls -lc /usr/bin/gem /usr/bin/ruby
