@@ -47,6 +47,8 @@ mkdir -p $CACHE_DIR
 # SASS/compass support
 status_pending "Installing SASS"
 
+echo "Gems before..."
+gem list
 
 # This is inefficient, but I am adding it because Heroku recently upgraded the ruby
 # version and previously cached files became invalid but in such a way that "gem
@@ -58,9 +60,13 @@ if [ -d $CACHE_DIR/.gems ]
     fi
 
 mkdir -p $CACHE_DIR/.gems
-gem install -i $CACHE_DIR/.gems --no-rdoc compass
+gem install -i $CACHE_DIR/.gems --no-rdoc -v 3.4.22 compass
 export PATH=$PATH:$CACHE_DIR/.gems/bin
 export GEM_PATH=$GEM_PATH:$CACHE_DIR/.gems
+
+echo "Gems after..."
+gem list
+
 status_done
 
 
